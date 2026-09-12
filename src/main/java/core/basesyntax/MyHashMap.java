@@ -54,7 +54,6 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         Node<K, V> current = table[index];
         while (current != null) {
-            // Перевірка ключа
             if ((current.key == null && key == null) ||
                     (current.key != null && current.key.equals(key))) {
                 return current.value;
@@ -75,7 +74,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         for (int i = 0; i < table.length; i++) {
             Node<K, V> current = table[i];
             while (current != null) {
-                Node<K, V> next = current.next; // зберігаємо старий next
+                Node<K, V> next = current.next;
                 int newIndex = current.hash % newCapacity;
                 if (newIndex < 0) {
                     newIndex += newCapacity;
