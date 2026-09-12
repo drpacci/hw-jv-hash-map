@@ -28,8 +28,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         Node<K, V> current = node;
         while (true) {
-            if ((current.key == null && key == null) ||
-                    (current.key != null && current.key.equals(key))) {
+            if ((current.key == null && key == null)
+                    || (current.key != null && current.key.equals(key))) {
                 current.value = value;
                 return;
             }
@@ -54,8 +54,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         Node<K, V> current = table[index];
         while (current != null) {
-            if ((current.key == null && key == null) ||
-                    (current.key != null && current.key.equals(key))) {
+            if ((current.key == null && key == null)
+                    || (current.key != null && current.key.equals(key))) {
                 return current.value;
             }
             current = current.next;
