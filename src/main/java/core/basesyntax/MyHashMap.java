@@ -28,8 +28,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         Node<K, V> current = node;
         while (true) {
-            if ((current.key == null && key == null)
-                    || (current.key != null && current.key.equals(key))) {
+            if ((current.key == null && key == null) ||
+                    (current.key != null && current.key.equals(key))) {
                 current.value = value;
                 return;
             }
@@ -95,10 +95,10 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     }
 
     static class Node<K, V> {
-        final K key;
-        V value;
-        final int hash;
-        Node<K, V> next;
+        private final K key;
+        private V value;
+        private final int hash;
+        private Node<K, V> next;
 
         Node(K key, V value, int hash, Node<K, V> next) {
             this.key = key;
